@@ -1,0 +1,15 @@
+#Anser from - https://groups.google.com/forum/#!topic/foreman-users/UqduWKF3gZU
+
+#list all the firewal rule
+firewall-cmd --list-all
+
+# not sure what this did
+firewall-cmd --zone public --change-interface=docker0
+
+#Open port
+firewall-cmd --permanent --zone public --add-port 2375/tcp 
+
+#reload the new config
+firewall-cmd --reload
+
+firewall-cmd --list-all
